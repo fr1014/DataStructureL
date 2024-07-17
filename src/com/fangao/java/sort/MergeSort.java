@@ -34,6 +34,7 @@ public class MergeSort {
         int i = left;
         int j = mid + 1;
         int k = 0;
+        // 一遍比较完成后，左侧或右侧可能还会剩余有序的数组
         while (i <= mid && j <= right) {
             if (arr[i] < arr[j]) {
                 temp[k++] = arr[i++];
@@ -50,6 +51,7 @@ public class MergeSort {
             temp[k++] = arr[j++];
         }
         System.out.println(Arrays.toString(temp));
+        //由于i是从left开始开始的，k是从0开始的，所以temp[k] == arr[left + k]
         for (int k2 = 0; k2 < temp.length; k2++) {
             arr[left + k2] = temp[k2];
             System.out.println("left: " + left);
